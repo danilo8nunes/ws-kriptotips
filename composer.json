@@ -1,0 +1,19 @@
+{
+  "name": "ws/ws",
+  "authors": [
+    {
+      "name": "Danilo Nunes",
+      "email": "danilo8nunes@gmail.com"
+    }
+  ],
+  "require": {
+    "cboden/ratchet": "^0.4.4",
+    "ratchet/pawl": "^0.4.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": []
+  }
+}
