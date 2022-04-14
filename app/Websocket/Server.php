@@ -9,5 +9,4 @@ use Ratchet\Server\EchoServer;
 
 $app = new App('localhost', 8080);
 $app->route('/operation', new Operation(), ['*']);
-// $app->route('/echo', new EchoServer, ['*']);
 $app->run();
