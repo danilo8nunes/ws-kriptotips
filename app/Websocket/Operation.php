@@ -32,7 +32,7 @@ class Operation implements MessageComponentInterface
         }
       }
     } else {
-      $from->send(json_encode(['error' => 'Invalid message sent to this channel']));
+      echo json_encode(['error' => 'Invalid message sent to this channel']);
     }
   }
 

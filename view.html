@@ -188,18 +188,19 @@
 
         socket.addEventListener('message', function (event) {
           data = JSON.parse(event.data);
+
           console.log(data);
 
           tbody.insertAdjacentHTML('beforeend',
             "<tr>" +
-            "<td> #" + data.id + "</td>" +
-            "<td>" + data.pair + "</td>" +
-            "<td>" + data.signal + "</td>" +
-            "<td>" + data.price + "</td>" +
-            "<td>" + data.stoploss + "</td>" +
-            "<td>" + data.target + "</td>" +
-            "<td>" + data.leverage + "</td>" +
-            "<td>" + data.eventTime + "</td>" +
+            "<td> #" + data.operation.id + "</td>" +
+            "<td>" + data.operation.pair + "</td>" +
+            "<td>" + data.operation.signal + "</td>" +
+            "<td>" + data.operation.price + "</td>" +
+            "<td>" + data.operation.stoploss + "</td>" +
+            "<td>" + data.operation.target + "</td>" +
+            "<td>" + data.operation.leverage + "</td>" +
+            "<td>" + data.operation.eventTime + "</td>" +
             "</tr>"
           );
         });
