@@ -5,6 +5,10 @@ require_once './vendor/autoload.php';
 use Ratchet\App;
 use App\Websocket\Operation;
 
-$app = new App('www.darkcrypt.com.br', 8089);
+$urlBase = ENVIRONMENT === 'prod' ? CONF_URL_BASE : CONF_URL_TEST;
+
+$app = new App($urlBase, 8080, '127.0.0.1');
+
 $app->route('/operation', new Operation(), ['*']);
+
 $app->run();

@@ -4,10 +4,25 @@ require_once './vendor/autoload.php';
 
 $data = $_POST;
 
-\Ratchet\Client\connect('ws://localhost:8080/operation')->then(function ($conn) use ($data) {
-  $conn->send(json_encode($data));
+if (!empty($data['app_token']) && $data['app_token'] === APP_TOKEN) {
 
-  $conn->close();
-}, function ($e) {
-  echo "Could not connect: {$e->getMessage()}\n";
-});
+  $urlBase = ENVIRONMENT === 'prod' ? CONF_URL_BASE : CONF_URL_TEST;
+
+  \Ratchet\Client\connect('ws://' . $urlBase . ':8080/operation')->then(function ($conn) use ($data) {
+    $conn->send(json_encode($data));
+
+    $conn->close();
+  }, function ($e) {
+    echo "Could not connect: {$e->getMessage()}\n";
+  });
+
+  if (!empty($data['operation'])) {
+    echo json_encode([
+      'success' => 'operation sent',
+    ]);
+  }
+} else {
+  echo json_encode([
+    'error' => 'invalid token',
+  ]);
+}

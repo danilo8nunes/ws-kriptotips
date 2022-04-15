@@ -21,10 +21,18 @@ class Operation implements MessageComponentInterface
 
   public function onMessage(ConnectionInterface $from, $msg)
   {
-    foreach ($this->clients as $client) {
-      if ($from != $client) {
-        $client->send($msg);
+    $data = json_decode($msg);
+
+    var_dump($data);
+
+    if (!empty($data->operation)) {
+      foreach ($this->clients as $client) {
+        if ($from != $client) {
+          $client->send(json_encode($msg));
+        }
       }
+    } else {
+      $from->send(json_encode(['error' => 'Invalid message sent to this channel']));
     }
   }
 

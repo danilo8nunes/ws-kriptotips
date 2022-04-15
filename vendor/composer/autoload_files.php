@@ -13,4 +13,5 @@ return array(
     'a4a119a56e50fbb293281d9a48007e0e' => $vendorDir . '/symfony/polyfill-php80/bootstrap.php',
     '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
     '3be16222a6efa6dd226a219eaaff823b' => $vendorDir . '/ratchet/pawl/src/functions_include.php',
+    '1ca6c1bf49cde3a1d128677076544358' => $baseDir . '/app/support/config.php',
 );
