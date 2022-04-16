@@ -1,3 +1,5 @@
 # ws-kriptotips
 
-Teste
+#### base URL
+
+wss://
