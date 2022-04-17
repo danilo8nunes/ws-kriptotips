@@ -6,7 +6,7 @@ define("ENVIRONMENT", "prod");
 /**
  * PROJECT URLs
  */
-define("CONF_URL_BASE", "www.darkcrypt.com.br");
+define("CONF_URL_BASE", "ws-kryptotips.herokuapp.com");
 define("CONF_URL_TEST", "localhost");
 
 

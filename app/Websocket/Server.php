@@ -7,7 +7,7 @@ use App\Websocket\Operation;
 
 $urlBase = ENVIRONMENT === 'prod' ? CONF_URL_BASE : CONF_URL_TEST;
 
-$app = new App($urlBase, 8080, '156.67.72.114');
+$app = new App($urlBase, 8080);
 
 $app->route('/operation', new Operation(), ['*']);
 
