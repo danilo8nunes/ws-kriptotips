@@ -9,6 +9,12 @@ define("ENVIRONMENT", "prod");
 define("CONF_URL_BASE", "ws-kryptotips.herokuapp.com");
 define("CONF_URL_TEST", "localhost");
 
+/**
+ * PROJECT URLs
+ */
+define("CONF_PORT_BASE", 80);
+define("CONF_PORT_TEST", 8080);
+
 
 /**
  *  APP TOKEN
