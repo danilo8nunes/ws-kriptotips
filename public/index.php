@@ -25,7 +25,7 @@ if (!empty($data['app_token']) && $data['app_token'] === APP_TOKEN) {
     ]);
   }
 } elseif (empty($data)) {
-  echo './view.html';
+  include './view.html';
 } else {
   echo json_encode([
     'error' => 'invalid token',
