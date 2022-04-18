@@ -1,7 +1,7 @@
 <?php
 
 
-define("ENVIRONMENT", "prod");
+define("ENVIRONMENT", "local");
 
 /**
  * PROJECT URLs
