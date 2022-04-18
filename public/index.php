@@ -16,6 +16,7 @@ if (!empty($data['app_token']) && $data['app_token'] === APP_TOKEN) {
     $conn->close();
   }, function ($e) {
     echo "Could not connect: {$e->getMessage()}\n";
+    exit;
   });
 
   if (!empty($data['operation'])) {
