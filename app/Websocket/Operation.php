@@ -23,8 +23,6 @@ class Operation implements MessageComponentInterface
   {
     $data = json_decode($msg);
 
-    var_dump($data);
-
     if (!empty($data->operation)) {
       foreach ($this->clients as $client) {
         if ($from != $client) {
