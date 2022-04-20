@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTP:Connection} Upgrade [NC]
+RewriteCond %{HTTP:Upgrade} websocket [NC]
+RewriteRule /(.*) ws://127.0.0.1:8080/$1 [P,L]
+
+ProxyRequests off
+<Location />
+    ProxyPass http://127.0.0.1:8080/
+    ProxyPassReverse /
+</Location>
