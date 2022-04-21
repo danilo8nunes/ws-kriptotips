@@ -1,1 +1,1 @@
-web: php app/Websocket/Server.php -p $PORT
+web: php app/Websocket/Server.php
