@@ -1,8 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTP:Connection} Upgrade [NC]
-RewriteCond %{HTTP:Upgrade} websocket [NC]
-RewriteRule /(.*) wss://127.0.0.1:8080/$1 [P,L]
-
-ProxyRequests off
-
-ProxyPreserveHost On
