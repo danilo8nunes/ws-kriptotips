@@ -9,7 +9,7 @@ $url = ENVIRONMENT === 'prod' ? CONF_URL_BASE : CONF_URL_TEST;
 $port =  ENVIRONMENT === 'prod' ? getenv('PORT') : CONF_PORT_TEST;
 $ip =  ENVIRONMENT === 'prod' ? CONF_IP_BASE : CONF_IP_TEST;
 
-$app = new App($url, '443');
+$app = new App($url, $port);
 
 $app->route('/operation', new Operation(), ['*']);
 
